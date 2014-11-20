@@ -353,3 +353,5 @@ CREATE VIEW `cloud`.`user_vm_view` AS
         `cloud`.`user_vm_details` `custom_speed`  ON (((`custom_speed`.`vm_id` = `cloud`.`vm_instance`.`id`) and (`custom_speed`.`name` = 'CpuSpeed')))
            left join
         `cloud`.`user_vm_details` `custom_ram_size`  ON (((`custom_ram_size`.`vm_id` = `cloud`.`vm_instance`.`id`) and (`custom_ram_size`.`name` = 'memory')));
+
+INSERT IGNORE INTO `cloud`.`configuration` VALUES ("Advanced", 'DEFAULT', 'management-server', "usage.report.interval", 7, "Interval (days) between sending anonymous Usage Reports back to the CloudStack project", "", NULL, NULL, 0);

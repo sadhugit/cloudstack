@@ -170,4 +170,13 @@ public class VersionDaoImpl extends GenericDaoBase<VersionVO, Long> implements V
         }
 
     }
+
+    @Override
+    @DB
+    public List<VersionVO> getAllVersions() {
+        SearchCriteria<VersionVO> sc = AllFieldsSearch.create();
+        sc.setParameters("step", "Complete");
+
+        return listBy(sc);
+    }
 }

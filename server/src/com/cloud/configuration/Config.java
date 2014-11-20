@@ -2065,7 +2065,10 @@ public enum Config {
     PublishAsynJobEvent("Advanced", ManagementServer.class, Boolean.class, "publish.async.job.events", "true", "enable or disable publishing of usage events on the event bus", null),
 
     // StatsCollector
-    StatsOutPutGraphiteHost("Advanced", ManagementServer.class, String.class, "stats.output.uri", "", "URI to additionally send StatsCollector statistics to", null);
+    StatsOutPutGraphiteHost("Advanced", ManagementServer.class, String.class, "stats.output.uri", "", "URI to additionally send StatsCollector statistics to", null),
+
+    // Usage Reporting service
+    UsageReportInterval("Advanced", ManagementServer.class, Integer.class, "usage.report.interval", "7", "Interval (days) between sending anonymous Usage Reports back to the CloudStack project", null);
 
     private final String _category;
     private final Class<?> _componentClass;
